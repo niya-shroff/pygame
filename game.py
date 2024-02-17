@@ -5,7 +5,7 @@ import random
 
 pygame.init()
 
-W, H = 800, 437
+W, H = 850, 500
 win = pygame.display.set_mode((W,H))
 pygame.display.set_caption('Side Scroller')
 
@@ -130,7 +130,7 @@ def updateFile():
         return score
 
     return last
-
+ 
 
 
 def endScreen():
