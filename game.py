@@ -7,7 +7,7 @@ pygame.init()
 
 W, H = 1000, 500
 win = pygame.display.set_mode((W,H))
-pygame.display.set_caption('Campus Bunny')
+pygame.display.set_caption('Side Scroller')
 
 bg = pygame.image.load(os.path.join('images', 'bg.png')).convert()
 bgX = 0
@@ -73,7 +73,7 @@ class player(object):
             self.runCount += 1
             self.hitbox = (self.x+ 4, self.y, self.width-24, self.height-13)
 
-        #pygame.draw.rect(win, (255,0,0),self.hitbox, 2)
+        pygame.draw.rect(win, (255,0,0),self.hitbox, 2)
 
 class saw(object):
     rotate = [pygame.image.load(os.path.join('images', 'SAW0.png')), pygame.image.load(os.path.join('images', 'SAW1.png')), pygame.image.load(os.path.join('images', 'SAW2.png')), pygame.image.load(os.path.join('images', 'SAW3.png'))]
@@ -87,8 +87,8 @@ class saw(object):
         self.vel = 1.4
 
     def draw(self, win):
-        self.hitbox = (self.x + 10, self.y + 5, self.width - 20, self.height - 5)
-        # pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
+        self.hitbox = (self.x + 10, self.y + 5, self.width - 25, self.height - 10)
+        pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
         if self.rotateCount >= 8:
             self.rotateCount = 0
         win.blit(pygame.transform.scale(self.rotate[self.rotateCount//2], (64,64)), (self.x,self.y))
@@ -105,8 +105,8 @@ class carrot(saw):
     img = pygame.image.load(os.path.join('images', 'carrot.png'))
 
     def draw(self, win):
-        self.hitbox = (self.x + 10, self.y, 28,315)
-        # pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
+        self.hitbox = (self.x + 135, self.y - 40, 20,300)
+        pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
         win.blit(self.img, (self.x, self.y))
 
     def collide(self, rect):
