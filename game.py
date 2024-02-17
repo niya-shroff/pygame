@@ -5,7 +5,7 @@ import random
 
 pygame.init()
 
-W, H = 850, 500
+W, H = 1000, 500
 win = pygame.display.set_mode((W,H))
 pygame.display.set_caption('Side Scroller')
 
@@ -102,7 +102,7 @@ class saw(object):
 
 
 class spike(saw):
-    img = pygame.image.load(os.path.join('images', 'spike.png'))
+    img = pygame.image.load(os.path.join('images', 'carrot.png'))
 
     def draw(self, win):
         self.hitbox = (self.x + 10, self.y, 28,315)
