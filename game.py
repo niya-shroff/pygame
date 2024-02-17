@@ -101,7 +101,7 @@ class saw(object):
         return False
 
 
-class spike(saw):
+class carrot(saw):
     img = pygame.image.load(os.path.join('images', 'carrot.png'))
 
     def draw(self, win):
@@ -228,7 +228,7 @@ while run:
             if r == 0:
                 obstacles.append(saw(810, 310, 64, 64))
             elif r == 1:
-                obstacles.append(spike(810, 0, 48, 310))
+                obstacles.append(carrot(810, 0, 48, 310))
 
     if runner.falling == False:
         keys = pygame.key.get_pressed()
