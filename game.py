@@ -182,8 +182,8 @@ def redrawWindow():
     largeFont = pygame.font.SysFont('comicsans', 30)
     win.blit(bg, (bgX, 0))
     win.blit(bg, (bgX2,0))
-    positive = largeFont.render('You are doing great!: ', 1 ,(255,255,255))
-    text = largeFont.render('Score: ' + str(score), 1, (255,255,255))
+    positive = largeFont.render('You are doing great!: ', 1 ,(0,0,0))
+    text = largeFont.render('Score: ' + str(score), 1, (0,0,0))
     runner.draw(win)
     for obstacle in obstacles:
         obstacle.draw(win)
