@@ -9,7 +9,7 @@ W, H = 1000, 500
 win = pygame.display.set_mode((W,H))
 pygame.display.set_caption('Campus Bunny')
 
-bg = pygame.image.load(os.path.join('images', 'fac and chap.png')).convert()
+bg = pygame.image.load(os.path.join('images', 'bg.png')).convert()
 bgX = 0
 bgX2 = bg.get_width()
 
