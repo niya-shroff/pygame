@@ -85,7 +85,7 @@ class player(object):
             self.runCount += 1
             self.hitbox = (self.x+ 30, self.y, self.width-24, self.height-13)
 
-        pygame.draw.rect(win, (255,0,0),self.hitbox, 2)
+        # pygame.draw.rect(win, (255,0,0),self.hitbox, 2)
 
 class saw(object):
     rotate = [pygame.image.load(os.path.join('images', 'Easter Egg.png')), 
@@ -105,7 +105,7 @@ class saw(object):
 
     def draw(self, win):
         self.hitbox = (self.x + 10, self.y + 5, self.width - 25, self.height - 10)
-        pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
+        # pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
         if self.rotateCount >= 8:
             self.rotateCount = 0
         win.blit(pygame.transform.scale(self.rotate[self.rotateCount//2], (64,64)), (self.x,self.y))
@@ -123,7 +123,7 @@ class carrot(saw):
     
     def draw(self, win):
         self.hitbox = (self.x + 135, self.y - 40, 20,300)
-        pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
+        # pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
         win.blit(self.img, (self.x, self.y))
 
     def collide(self, rect):
