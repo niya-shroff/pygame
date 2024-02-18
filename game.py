@@ -194,7 +194,7 @@ def redrawWindow():
 
 
 pygame.time.set_timer(USEREVENT+1, 500)
-pygame.time.set_timer(USEREVENT+2, 3000)
+pygame.time.set_timer(USEREVENT+2, 6000)
 speed = 30
 
 score = 0
@@ -240,7 +240,7 @@ while run:
             run = False
 
         if event.type == USEREVENT+1:
-            speed += 1
+            speed += 5
 
         if event.type == USEREVENT+2:
             r = random.randrange(0,2)
