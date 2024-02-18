@@ -7,9 +7,9 @@ pygame.init()
 
 W, H = 1000, 500
 win = pygame.display.set_mode((W,H))
-pygame.display.set_caption('Side Scroller')
+pygame.display.set_caption('Campus Bunny')
 
-bg = pygame.image.load(os.path.join('images', 'bg.png')).convert()
+bg = pygame.image.load(os.path.join('images', 'fac and chap.png')).convert()
 bgX = 0
 bgX2 = bg.get_width()
 
@@ -86,7 +86,12 @@ class player(object):
         pygame.draw.rect(win, (255,0,0),self.hitbox, 2)
 
 class saw(object):
-    rotate = [pygame.image.load(os.path.join('images', 'SAW0.png')), pygame.image.load(os.path.join('images', 'SAW1.png')), pygame.image.load(os.path.join('images', 'SAW2.png')), pygame.image.load(os.path.join('images', 'SAW3.png'))]
+    rotate = [pygame.image.load(os.path.join('images', 'Easter Egg.png')), 
+              pygame.image.load(os.path.join('images', 'Easter Egg.png')), 
+              pygame.image.load(os.path.join('images', 'Easter Egg.png')), 
+              pygame.image.load(os.path.join('images', 'Broken Egg.png')),
+              pygame.image.load(os.path.join('images', 'Broken Egg.png')), 
+              pygame.image.load(os.path.join('images', 'Broken Egg.png'))]
 
     def __init__(self, x, y, width, height):
         self.x = x
@@ -113,7 +118,7 @@ class saw(object):
 
 class carrot(saw):
     img = pygame.image.load(os.path.join('images', 'carrot.png'))
-
+    
     def draw(self, win):
         self.hitbox = (self.x + 135, self.y - 40, 20,300)
         pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
@@ -175,12 +180,14 @@ def redrawWindow():
     largeFont = pygame.font.SysFont('comicsans', 30)
     win.blit(bg, (bgX, 0))
     win.blit(bg, (bgX2,0))
+    positive = largeFont.render('You are doing great!: ', 1 ,(255,255,255))
     text = largeFont.render('Score: ' + str(score), 1, (255,255,255))
     runner.draw(win)
     for obstacle in obstacles:
         obstacle.draw(win)
 
     win.blit(text, (700, 10))
+    win.blit(positive, (100, 10))
     pygame.display.update()
 
 
