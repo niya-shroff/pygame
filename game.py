@@ -104,7 +104,8 @@ class saw(object):
         self.vel = 1.4
 
     def draw(self, win):
-        self.hitbox = (self.x + 10, self.y + 5, self.width - 25, self.height - 10)
+        self.hitbox = (self.x + 10, self.y + 5, 0, 0)
+        # self.hitbox = (self.x + 10, self.y + 5, self.width - 25, self.height - 10)
         # pygame.draw.rect(win, (255,0,0), self.hitbox, 2)
         if self.rotateCount >= 8:
             self.rotateCount = 0
