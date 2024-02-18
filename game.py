@@ -5,9 +5,11 @@ import random
 
 pygame.init()
 
-W, H = 1000, 500
+W, H = 850, 500
 win = pygame.display.set_mode((W,H))
 pygame.display.set_caption('Campus Bunny')
+umass_fight_song = pygame.mixer.Sound('fight song.mp3')
+pygame.mixer.Sound.play(umass_fight_song)
 
 bg = pygame.image.load(os.path.join('images', 'bg.png')).convert()
 bgX = 0
@@ -165,7 +167,7 @@ def endScreen():
                 run = False
                 runner.falling = False
                 runner.sliding = False
-                runner.jumpin = False
+                runner.jumping = False
 
         win.blit(bg, (0,0))
         largeFont = pygame.font.SysFont('comicsans', 80)
